@@ -13,12 +13,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function createStars() {
         stars = [];
+        // Gere estrelas em toda a largura, incluindo bordas
         for (let i = 0; i < 120; i++) {
             stars.push({
-                x: Math.random() * canvas.width,
-                y: Math.random() * canvas.height,
+                x: Math.random() * (canvas.width - 10) + 5, // evita bordas extremas
+                y: Math.random() * (canvas.height - 10) + 5,
                 r: Math.random() * 1.5 + 0.5,
-                dx: (Math.random() - 0.5) * 0.25, // velocidade reduzida
+                dx: (Math.random() - 0.5) * 0.25,
                 dy: (Math.random() - 0.5) * 0.25
             });
         }
@@ -33,10 +34,10 @@ document.addEventListener("DOMContentLoaded", function () {
         for (let star of stars) {
             ctx.save();
             ctx.beginPath();
-            ctx.arc(star.x, star.y, star.r, 0, Math.PI * 2);
+            ctx.arc(star.x, star.y, star.r * 1.5, 0, Math.PI * 2); // estrelas maiores
             ctx.shadowColor = "#00f0ff"; // azul neon
-            ctx.shadowBlur = 10;
-            ctx.fillStyle = "rgba(0,240,255,0.7)";
+            ctx.shadowBlur = 16; // brilho levemente aumentado
+            ctx.fillStyle = "rgba(0,240,255,0.85)"; // mais visível
             ctx.fill();
             ctx.restore();
         }
@@ -44,14 +45,15 @@ document.addEventListener("DOMContentLoaded", function () {
         for (let i = 0; i < stars.length; i++) {
             for (let j = i + 1; j < stars.length; j++) {
                 let dist = Math.hypot(stars[i].x - stars[j].x, stars[i].y - stars[j].y);
-                if (dist < 80) {
+                if (dist < 100) { // linhas mais longas
                     ctx.save();
-                    ctx.strokeStyle = "rgba(0,240,255,0.18)";
+                    ctx.strokeStyle = "rgba(0,240,255,0.35)"; // linhas mais visíveis
                     ctx.shadowColor = "#00f0ff";
-                    ctx.shadowBlur = 4;
+                    ctx.shadowBlur = 8; // brilho levemente aumentado
                     ctx.beginPath();
                     ctx.moveTo(stars[i].x, stars[i].y);
                     ctx.lineTo(stars[j].x, stars[j].y);
+                    ctx.lineWidth = 2; // espessura das linhas aumentada
                     ctx.stroke();
                     ctx.restore();
                 }
