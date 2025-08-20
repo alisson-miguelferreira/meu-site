@@ -1,25 +1,24 @@
-/*
- * ======================================
+/* ======================================
  * CSS Otimizado para um Portfólio Profissional
- * ======================================
- * Mantendo seu estilo e estrutura — com correções
- */
+ * ====================================== */
 
 /* =========================
-   Variáveis / Paleta (úteis para alterar depois)
-   ========================= */
+ * Variáveis / Paleta
+ * ========================= */
 :root {
     --bg: #101010;
-    --surface: rgba(30,30,40,0.7);
-    --surface-strong: rgba(30,30,40,0.85);
-    --line: rgba(255,255,255,0.06);
+    --surface: rgba(30, 30, 40, 0.7);
+    --surface-strong: rgba(30, 30, 40, 0.85);
+    --line: rgba(255, 255, 255, 0.06);
     --text: #f5f5f5;
     --muted: #b6b6b6;
     --primary: #007bff;
     --accent: #d4af37;
+    --card-bg: #f5f5f5;
+    --card-text: #181818;
     --radius: 18px;
-    --shadow-sm: 0 2px 16px rgba(0,0,0,0.10);
-    --shadow-lg: 0 12px 32px rgba(0,0,0,0.22);
+    --shadow-sm: 0 2px 16px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.22);
     --max-width: 1200px;
 }
 
@@ -41,7 +40,7 @@ body {
     background: var(--bg);
     position: relative;
     min-height: 100vh;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Poppins', 'Segoe UI', Arial, Helvetica, sans-serif;
     color: var(--text);
 }
 
@@ -75,17 +74,39 @@ section,
     padding-inline: clamp(12px, 3vw, 48px);
 }
 
-/* Estilo geral para todos os títulos (H1-H6) */
+/* Estilos gerais para todos os títulos (H1-H6) */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-    color: var(--text) !important;
-    text-shadow: none;
+    font-family: 'Poppins', 'Segoe UI', Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--text);
+    margin: 0 0 0.5em 0;
     text-align: center;
-    margin: 0 0 12px 0;
+}
+
+h1 {
+    font-size: 2.6rem;
+}
+
+h3 {
+    font-size: 1.6rem;
+}
+
+h4 {
+    font-size: 1.3rem;
+}
+
+h5 {
+    font-size: 1.08rem;
+}
+
+h6 {
+    font-size: 0.98rem;
 }
 
 /* Estilo para parágrafos e listas */
@@ -102,8 +123,8 @@ ul {
 /* Títulos com linha de destaque */
 h2 {
     font-size: 2rem;
-    margin-top: 48px;
-    margin-bottom: 24px;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
     font-weight: 600;
     letter-spacing: 1px;
     position: relative;
@@ -117,16 +138,17 @@ h2::after {
     height: 2px;
     background: var(--accent);
     margin: 6px auto 0;
-    box-shadow: 0 0 8px rgba(212,175,55,0.25);
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.25);
 }
 
 /* Títulos das seções "Skills" e "Contato" sem a linha */
 .skills h2,
 #contact h2 {
     font-size: 1.5rem;
-    margin-bottom: 18px;
+    margin-bottom: 1.125rem;
     margin-top: 0;
 }
+
 .skills h2::after,
 #contact h2::after {
     display: none;
@@ -140,7 +162,7 @@ h2::after {
     align-items: center;
     gap: 40px;
     flex-wrap: wrap;
-    background: rgba(10, 10, 10, 0.92);
+    background: var(--surface-strong);
     padding: 24px 0;
     border-radius: 0 0 var(--radius) var(--radius);
     box-shadow: var(--shadow-sm);
@@ -167,7 +189,6 @@ h2::after {
 /* ======================================
  * Seção "Sobre Mim"
  * ====================================== */
-/* Use grid para garantir alinhamento estável */
 .about-content {
     display: grid;
     grid-template-columns: 240px 1fr;
@@ -183,30 +204,12 @@ h2::after {
     border: 1px solid var(--line);
 }
 
-@media (max-width: 900px) {
-    .about-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-        padding: 20px;
-    }
-}
-
 .profile-image {
     width: 240px;
     height: 320px;
     object-fit: cover;
     border-radius: 18px;
     border: 4px solid var(--accent);
-    box-shadow: 0 4px 24px rgba(212, 175, 55, 0.18);
-    display: block;
-    background: #fff;
-}
-
-.profile-caption {
-    text-align: center;
-    font-size: 1.08rem;
-    color: var(--text);
-    margin-top: 12px;
 }
 
 .profile-caption span {
@@ -221,33 +224,28 @@ h2::after {
     text-align: left;
 }
 
-/* responsivo: centraliza texto quando empilhado */
-@media (max-width: 900px) {
-    .profile-text { text-align: center; }
-}
-
 /* ======================================
  * Cards / Projetos
  * ====================================== */
-
-/* Grid fluido — evita quebras nas media queries */
 .cards-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 28px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
     justify-content: center;
     padding: 32px 24px;
     max-width: var(--max-width);
-    margin: 0 auto;
+    margin: 0 auto 48px auto;
 }
 
 .card {
-    min-height: 320px;
-    padding: 18px 14px;
-    border-radius: 18px;
+    min-height: 220px;
+    max-width: 380px;
+    padding: 22px 18px;
+    border-radius: var(--radius);
     box-shadow: var(--shadow-sm);
-    background: #f5f5f5;
-    border: 1px solid #181818;
+    background: var(--card-bg);
+    border: 1px solid rgba(24, 24, 24, 0.15);
+    /* Borda inicial suave */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -256,19 +254,23 @@ h2::after {
 }
 
 .card:hover {
-    box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
     transform: translateY(-6px) scale(1.01);
-        border: 2.5px solid #d4af37;
-        border-color: rgba(212,175,55,0.18);
+    border-color: var(--accent);
+    /* Corrigido para variável */
 }
 
+/* Imagens dos cards de projetos */
 .card-img-top {
     width: 100%;
-    height: 170px;
-    object-fit: cover;
+    height: 120px;
+    object-fit: contain;
     background: #222;
-    border-radius: 12px;
-    margin-bottom: 12px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Divisor entre imagem e conteúdo */
@@ -277,7 +279,7 @@ h2::after {
     height: 2px;
     background: var(--accent);
     margin: 12px auto;
-    box-shadow: 0 0 8px rgba(212,175,55,0.18);
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.18);
     border-radius: 2px;
 }
 
@@ -285,13 +287,13 @@ h2::after {
     font-size: 1.05rem;
     margin-bottom: 6px;
     font-weight: 600;
-    color: #181818;
+    color: var(--card-text);
     text-align: center;
 }
 
 .card-text {
     font-size: 0.95rem;
-    color: #181818;
+    color: var(--card-text);
     margin-bottom: 10px;
     text-align: center;
 }
@@ -302,23 +304,90 @@ h2::after {
 }
 
 .btn.btn-primary {
-    font-size: 0.98rem;
-    padding: 8px 0;
-    border-radius: 8px;
-    width: 90%;
+    font-size: 1.12rem;
+    font-weight: 700;
+    padding: 16px 0;
+    border-radius: 16px;
+    width: 96%;
+    text-align: center;
     display: block;
-    margin: 0 auto;
-    background-color: var(--accent);
+    margin: 20px auto 24px auto;
+    background: linear-gradient(90deg, #e5bf4c 0%, #d4af37 100%);
     color: #181818;
     border: none;
-    transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    text-decoration: none !important;
+    letter-spacing: 0.7px;
+    box-shadow: 0 4px 18px rgba(212, 175, 55, 0.14);
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
 }
 
 .btn.btn-primary:hover,
 .btn.btn-primary:focus {
-    background-color: #e5bf4c;
-    box-shadow: 0 8px 24px rgba(229,191,76,0.18);
-    transform: translateY(-2px);
+    background: linear-gradient(90deg, #d4af37 0%, #e5bf4c 100%);
+    color: #181818;
+    box-shadow: 0 12px 32px rgba(229, 191, 76, 0.18);
+    transform: translateY(-3px) scale(1.06);
+}
+
+/* ======================================
+ * Carrossel de Projetos
+ * ====================================== */
+.carousel-projects {
+    position: relative;
+    max-width: 520px;
+    margin: 0 auto 48px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 340px;
+}
+
+.carousel-track {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    min-height: 340px;
+    position: relative;
+}
+
+.carousel-track .card {
+    min-width: 100%;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.32, 1);
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.carousel-arrow {
+    background: rgba(212, 175, 55, 0.85);
+    border: none;
+    color: var(--card-text);
+    font-size: 2.2rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 12px rgba(212, 175, 55, 0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    transition: background 0.2s;
+}
+
+.carousel-arrow.left {
+    left: -56px;
+}
+
+.carousel-arrow.right {
+    right: -56px;
+}
+
+.carousel-arrow:hover {
+    background: #fff8dc;
+    color: var(--accent);
 }
 
 /* ======================================
@@ -363,13 +432,12 @@ h2::after {
     margin-right: 8px;
     vertical-align: middle;
     color: var(--accent);
-    text-shadow: 0 0 4px rgba(166,140,44,0.25);
+    text-shadow: 0 0 4px rgba(166, 140, 44, 0.25);
 }
 
 /* ======================================
- * Seção de Contato (AJUSTES IMPORTANTES)
+ * Seção de Contato
  * ====================================== */
-/* Container principal — garante espaço para itens maiores */
 #contact {
     background: var(--surface);
     border-radius: 16px;
@@ -381,7 +449,6 @@ h2::after {
     border: 1px solid var(--line);
 }
 
-/* Linha de contatos — flex para alinhar e expandir itens */
 .contact-row {
     display: flex;
     justify-content: center;
@@ -391,7 +458,6 @@ h2::after {
     margin-top: 18px;
 }
 
-/* Cada item de contato — novo wrapper para controlar tamanho e espaçamento */
 .contact-item {
     display: inline-flex;
     flex-direction: column;
@@ -399,24 +465,12 @@ h2::after {
     gap: 12px;
     padding: 12px 18px;
     border-radius: 12px;
-    background: rgba(255,255,255,0.02);
+    background: rgba(255, 255, 255, 0.02);
     min-width: 180px;
     justify-content: center;
-    transition: transform .12s, box-shadow .12s, background .12s;
+    transition: transform 0.12s, box-shadow 0.12s, background 0.12s;
 }
 
-/*
-    Correções: Consolidado e simplificado o estilo dos ícones.
-    Não há mais a necessidade de !important, nem de regras duplicadas.
-*/
-.contact-icon {
-    font-size: 1.5em;
-    color: var(--accent);
-    text-shadow: 0 0 6px rgba(212,175,55,0.18);
-    transition: color .12s, text-shadow .12s;
-}
-
-/* Estilo para links dentro do item de contato */
 .contact-item a {
     text-decoration: none;
     color: inherit;
@@ -428,7 +482,13 @@ h2::after {
     gap: 12px;
 }
 
-/* Título e Subtítulo do contato */
+.contact-icon {
+    font-size: 1.5em;
+    color: var(--accent);
+    text-shadow: 0 0 6px rgba(212, 175, 55, 0.18);
+    transition: color 0.12s, text-shadow 0.12s;
+}
+
 .contact-label {
     font-size: 1rem;
     color: var(--text);
@@ -439,24 +499,22 @@ h2::after {
 }
 
 .contact-sub {
-    font-size: .9rem;
+    font-size: 0.9rem;
     color: var(--muted);
     line-height: 1.2;
     text-align: center;
-    margin-top: -8px; /* Ajuste para melhor alinhamento */
+    margin-top: -8px;
 }
 
-/* Hover nos ícones de contato */
 .contact-item:hover .contact-icon {
     color: #fff8dc;
-    text-shadow: 0 0 12px rgba(212,175,55,0.28), 0 0 24px #fff8dc;
+    text-shadow: 0 0 12px rgba(212, 175, 55, 0.28), 0 0 24px #fff8dc;
 }
 
-/* Hover no item de contato */
 .contact-item:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 22px rgba(0,0,0,0.22);
-    background: rgba(255,255,255,0.02);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.22);
+    background: rgba(255, 255, 255, 0.02);
 }
 
 /* ======================================
@@ -469,42 +527,76 @@ h2::after {
     z-index: 99;
     opacity: 1;
     pointer-events: auto;
-    transition: opacity 0.3s, box-shadow .18s, transform .12s;
+    transition: opacity 0.3s, box-shadow 0.18s, transform 0.12s;
     cursor: pointer;
     border-radius: 50%;
-    background: rgba(0,0,0,0.0);
+    background: rgba(0, 0, 0, 0);
     width: 58px;
     height: 58px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+    box-shadow: 0 0 24px 8px rgba(212, 175, 55, 0.22), 0 6px 18px rgba(0, 0, 0, 0.35);
 }
 
 #back-to-top svg {
     display: block;
-    width: 34px;
-    height: 34px;
+    width: 44px;
+    height: 44px;
     fill: var(--accent);
-    filter: drop-shadow(0 0 6px rgba(212,175,55,0.25));
+    filter: none;
 }
 
 #back-to-top:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 0 36px 8px rgba(212,175,55,0.18);
+    transform: translateY(-4px) scale(1.12);
+    box-shadow: 0 0 48px 16px #e5bf4c, 0 0 36px 12px rgba(212, 175, 55, 0.22);
+}
+
+#back-to-top:hover svg {
+    fill: #e5bf4c;
+    filter: drop-shadow(0 0 16px var(--accent)) drop-shadow(0 0 8px #fff8dc);
 }
 
 /* ======================================
- * Acessibilidade e reduz motion
+ * Responsividade
  * ====================================== */
-a:focus-visible, button:focus-visible, .btn:focus-visible, #back-to-top:focus-visible {
-    outline: 3px solid rgba(56,189,248,0.12);
+@media (max-width: 900px) {
+    .about-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .profile-text {
+        text-align: center;
+    }
+
+    .carousel-arrow.left {
+        left: 8px;
+    }
+
+    .carousel-arrow.right {
+        right: 8px;
+    }
+}
+
+/* ======================================
+ * Acessibilidade e Redução de Movimento
+ * ====================================== */
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+#back-to-top:focus-visible {
+    outline: 3px solid rgba(56, 189, 248, 0.12);
     outline-offset: 3px;
     border-radius: 8px;
 }
 
 @media (prefers-reduced-motion: reduce) {
-    * { transition: none !important; animation: none !important; }
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
 }
 
 /* ======================================

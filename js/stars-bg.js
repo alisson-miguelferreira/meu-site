@@ -25,8 +25,8 @@
                     x: Math.random() * (canvas.width - 10) + 5,
                     y: Math.random() * (canvas.height - 10) + 5,
                     r: Math.random() * 1.5 + 0.5,
-                    dx: (Math.random() - 0.5) * 0.55,
-                    dy: (Math.random() - 0.5) * 0.55
+                    dx: (Math.random() - 0.5) * 1.7,
+                    dy: (Math.random() - 0.5) * 1.7
                 });
             }
         }
