@@ -1,79 +1,71 @@
-# 🌌 Meu Portfólio Pessoal – Alisson Miguel Ferreira
+# 🌟 Portfólio Pessoal - Alisson Miguel Ferreira
 
-Bem-vindo ao meu portfólio pessoal! Aqui você encontra meus principais projetos, habilidades e formas de contato. Este site foi desenvolvido com foco em design moderno, responsividade e uma experiência visual agradável, incluindo um background animado de estrelas em neon. 🚀
-
----
-
-## ✨ Demonstração
-
-Acesse: [alisson-miguelferreira.github.io/meu-site-pessoal](https://alisson-miguelferreira.github.io/meu-site-pessoal)
+Bem-vindo ao meu portfólio online! Aqui você encontrará meus projetos, habilidades e minha jornada como **Desenvolvedor FullStack**, com foco em experiências modernas, responsivas e interativas. 🚀
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
-
-- HTML5
-- CSS3 (com responsividade e animações)
-- JavaScript (animação de estrelas e interações)
-- Bootstrap 5
-- SVG (ícones personalizados)
-- [Canvas API](https://developer.mozilla.org/pt-BR/docs/Web/API/Canvas_API) para animação de fundo
+## 🔹 Sobre Mim
+Olá! Sou **Alisson Miguel Ferreira**, apaixonado por tecnologia e programação 💻. Estou sempre aprendendo novas ferramentas e linguagens para desenvolver soluções criativas e eficientes ✨.  
+Este site foi criado para apresentar meus projetos, compartilhar minha evolução e conectar com profissionais da área 🤝.
 
 ---
 
-## 📂 Estrutura do Projeto
+## 🛠️ Skills
+Minhas principais competências técnicas incluem:  
 
-```
-├── assets/                # Imagens e ícones
-├── js/
-│   ├── stars-bg.js        # Animação do fundo de estrelas
-│   └── back-to-top.js     # Botão flutuante de voltar ao topo
-├── styles.css             # Estilos principais do site
-├── index.html             # Página principal
-└── README.md              # Este arquivo
-```
+- 💻 **HTML5, CSS3, JavaScript**  
+- ⚡ **Bootstrap**  
+- 🗂️ **Git & GitHub**  
+- 📱 **Design responsivo e acessível**  
+- 🌌 **Canvas API** (fundo estrelado animado)
 
 ---
 
-## 💡 Funcionalidades
+## 💻 Projetos em Destaque
 
-- **Layout responsivo** para desktop e mobile
-- **Animação de estrelas** em neon no fundo
-- **Cards de projetos** organizados em grid
-- **Botão flutuante** para voltar ao topo da página
-- **Seção de contato** com links para e-mail e LinkedIn
-- **Design inspirado** em tendências modernas e no site da Microsoft
+### 1. [Reprodução do site Microsoft](https://alisson-miguelferreira.github.io/copia-site-Microsoft/) 🖥️
+Página inspirada no site oficial da Microsoft, com layout moderno, menu responsivo e seções para produtos como Copilot, Microsoft 365, Xbox, Edge e Visual Studio.
+
+### 2. [E-commerce TecStore](https://alisson-miguelferreira.github.io/e-commerce/) 🛒
+Loja virtual simulando a compra de produtos de tecnologia, com catálogo, carrinho de compras e interface responsiva.
+
+### 3. [Conversor de Moedas](https://alisson-miguelferreira.github.io/conversor-de-moedas/) 💱
+Conversor de moedas com cálculos imediatos entre Real, Dólar, Euro, Libra Esterlina e Bitcoin, utilizando cotações reais atualizadas.
 
 ---
 
-## 👨‍💻 Sobre Mim
+## 📂 Demais Projetos
+- [Página de login funcional](https://alisson-miguelferreira.github.io/pagina-login/) 🔐 – Interface intuitiva com backgrounds dinâmicos.  
+- [Easy Shopping](https://alisson-miguelferreira.github.io/Easy-Shopping/) 📱 – Landing page responsiva para compras via mobile.  
+- [Positive congratulation](https://alisson-miguelferreira.github.io/Positive-Congratulation/) 🚗 – Plataforma fictícia de mobilidade urbana.  
+- [Sorteador de Números](https://alisson-miguelferreira.github.io/sorteador/) 🎲 – Sorteador de números aleatórios com HTML, CSS e JS.  
+- [Irmãos Mario Encanadores](https://alisson-miguelferreira.github.io/Projeto-irmaos-Mario-encanadores/) 🛠️ – Site institucional fictício de serviços de encanamento.  
+- [We Care Pet](https://alisson-miguelferreira.github.io/WE-CARE/) 🐾 – Landing page educativa simulando uma clínica veterinária.
 
-Desenvolvedor FullStack apaixonado por tecnologia, sempre buscando aprender e criar soluções criativas para o universo digital.
+---
+
+## 🌐 Acesse o site
+Confira meu portfólio completo online: [🌐 Meu Portfólio](https://alisson-miguelferreira.github.io/meu-site/)
+
+---
+
+## ⚙️ Tecnologias Utilizadas
+- 💻 HTML5, CSS3, JavaScript  
+- ⚡ Bootstrap  
+- ⭐ Font Awesome  
+- 🌌 Canvas API (fundo estrelado animado)  
+- 🗂️ Git & GitHub
 
 ---
 
 ## 📞 Contato
+Entre em contato comigo através de:  
 
-- [LinkedIn](https://www.linkedin.com/in/alisson-miguelferreira/)
-- [WhatsApp](https://wa.me/5549991137577?text=Ol%C3%A1%20Alisson%2C%20eu%20visitei%20seu%20site%20pessoal%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%2C%20meu%20nome%20%C3%A9...)
-- E-mail: officealissonmiguelferreira@gmail.com
-
----
-
-## ⚡ Como rodar localmente
-
-1. Clone este repositório:
-    ```bash
-    git clone https://github.com/alisson-miguelferreira/meu-site-pessoal.git
-    ```
-2. Abra o arquivo `index.html` no seu navegador.
+- ✉️ [Email](mailto:officealissonmiguelferreira@gmail.com)  
+- 🔗 [LinkedIn](https://www.linkedin.com/in/alisson-miguelferreira/)  
+- 🐙 [GitHub](https://github.com/alisson-miguelferreira)  
+- 💬 [WhatsApp](https://wa.me/5549991137577)
 
 ---
 
-## ⭐ Licença
-
-Este projeto é open-source e livre para uso pessoal e profissional.
-
----
-
-Feito com 💙 por Alisson Miguel Ferreira
+© 2025 Alisson Miguel Ferreira. Todos os direitos reservados.

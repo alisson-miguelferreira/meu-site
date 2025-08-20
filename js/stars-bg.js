@@ -20,7 +20,12 @@
 
         function createStars() {
             stars = [];
-            for (let i = 0; i < 120; i++) {
+            // Quantidade de estrelas proporcional ao tamanho da tela
+            let baseStars = 120;
+            if (canvas.width < 600) baseStars = 50;
+            else if (canvas.width < 900) baseStars = 80;
+            else if (canvas.width < 1200) baseStars = 100;
+            for (let i = 0; i < baseStars; i++) {
                 stars.push({
                     x: Math.random() * (canvas.width - 10) + 5,
                     y: Math.random() * (canvas.height - 10) + 5,
