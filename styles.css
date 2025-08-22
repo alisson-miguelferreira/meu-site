@@ -585,15 +585,107 @@ ul {
 
     .skills h2 {
         font-size: 1.4rem;
+        font-family: 'Poppins', 'Segoe UI', Arial, Helvetica, sans-serif;
+        font-weight: 600;
+    }
+
+    @media (max-width: 900px) {
+        .about-content {
+            grid-template-columns: 1fr;
+            text-align: center;
+            padding: 20px;
+        }
+        .profile-text {
+            text-align: center;
+            font-family: 'Poppins', 'Segoe UI', Arial, Helvetica, sans-serif;
+            font-weight: 400;
+        }
+        .carousel-arrow.left {
+            left: 8px;
+        }
+        .carousel-arrow.right {
+            right: 8px;
+        }
+        .skills {
+            max-width: 98vw;
+            padding: 18px 6px;
+            font-family: 'Poppins', 'Segoe UI', Arial, Helvetica, sans-serif;
+            font-weight: 500;
+        }
+        .skills ul {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px 8px;
+        }
+        .skills h2, .skills li {
+            font-family: 'Poppins', 'Segoe UI', Arial, Helvetica, sans-serif;
+            font-weight: 600;
+        }
+        h1, h1.destaque-frase {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 900;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .skills {
+            max-width: 100vw;
+            padding: 10px 2px;
+            font-family: 'Poppins', 'Segoe UI', Arial, Helvetica, sans-serif;
+            font-weight: 500;
+        }
+        .skills ul {
+            grid-template-columns: 1fr;
+            gap: 10px 4px;
+        }
+        .skills h2, .skills li {
+            font-family: 'Poppins', 'Segoe UI', Arial, Helvetica, sans-serif;
+            font-weight: 600;
+        }
+        h1, h1.destaque-frase {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 900;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .skills ul {
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 10px 6px;
+        }
+        .skills h2 {
+            font-size: 1.4rem;
+            font-family: 'Poppins', 'Segoe UI', Arial, Helvetica, sans-serif;
+            font-weight: 600;
+        }
+        .skills li {
+            font-size: 0.9rem;
+            padding: 6px 8px;
+            font-family: 'Poppins', 'Segoe UI', Arial, Helvetica, sans-serif;
+            font-weight: 600;
+        }
+        .skills li i {
+            font-size: 1.2em;
+        }
+        h1, h1.destaque-frase {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 900;
+        }
     }
 
     .skills li {
         font-size: 0.9rem;
         padding: 6px 8px;
+        font-family: 'Poppins', 'Segoe UI', Arial, Helvetica, sans-serif;
+        font-weight: 600;
     }
 
     .skills li i {
         font-size: 1.2em;
+    }
+
+    h1.destaque-frase {
+        font-family: 'Cormorant Garamond', serif;
+        font-weight: 900;
     }
 }
 
