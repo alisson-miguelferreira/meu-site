@@ -75,7 +75,26 @@ section,
 }
 
 /* Estilos gerais para todos os títulos (H1-H6) */
-h1,
+
+h1.destaque-frase {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem;
+    font-style: italic;
+    font-weight: 900;
+    color: #d4af37;
+    text-align: center;
+    margin: 56px auto 32px auto;
+    max-width: 800px;
+    letter-spacing: 1.5px;
+    line-height: 1.3;
+    background: none;
+    border: none;
+    padding: 0 18px;
+    text-shadow: 0 4px 24px rgba(212, 175, 55, 0.18);
+    border-bottom: 2px solid #d4af37;
+    border-radius: 0 0 18px 18px;
+}
+
 h2,
 h3,
 h4,
@@ -88,6 +107,72 @@ h6 {
     margin: 0 0 0.5em 0;
     text-align: center;
 }
+
+h2 {
+    font-size: 2rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+h4 {
+    font-size: 1.15rem;
+    margin-bottom: 0.8rem;
+}
+
+h5 {
+    font-size: 1rem;
+    margin-bottom: 0.6rem;
+}
+
+h6 {
+    font-size: 0.92rem;
+    margin-bottom: 0.4rem;
+}
+
+.destaque-frase {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem;
+    font-style: italic;
+    font-weight: 900;
+    color: #d4af37;
+    text-align: center;
+    margin: 56px auto 32px auto;
+    max-width: 800px;
+    letter-spacing: 1.5px;
+    line-height: 1.3;
+    background: none;
+    border: none;
+    padding: 0 18px;
+    text-shadow: 0 4px 24px rgba(212, 175, 55, 0.18);
+    border-bottom: 2px solid #d4af37;
+    border-radius: 0 0 18px 18px;
+}
+
+/* Espaçamento entre seções principais */
+main>section {
+    margin-top: 120px;
+    margin-bottom: 120px;
+    scroll-margin-top: 100px;
+}
+
+/* Espaçamento extra para a seção de skills */
+#skills {
+    margin-top: 140px;
+    margin-bottom: 140px;
+}
+
+
+/* Espaçamento extra para a seção de skills */
+#skills {
+    margin-top: 96px;
+    margin-bottom: 96px;
+}
+
 
 h1 {
     font-size: 2.6rem;
@@ -119,27 +204,6 @@ ul {
 /* ======================================
  * Seções e Componentes Específicos
  * ====================================== */
-
-/* Títulos com linha de destaque */
-h2 {
-    font-size: 2rem;
-    margin-top: 3rem;
-    margin-bottom: 1.5rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-    position: relative;
-    display: inline-block;
-}
-
-h2::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 2px;
-    background: var(--accent);
-    margin: 6px auto 0;
-    box-shadow: 0 0 8px rgba(212, 175, 55, 0.25);
-}
 
 /* Títulos das seções "Skills" e "Contato" sem a linha */
 .skills h2,
@@ -191,30 +255,67 @@ h2::after {
  * ====================================== */
 .about-content {
     display: grid;
-    grid-template-columns: 240px 1fr;
-    justify-content: center;
+    grid-template-columns: 200px 1fr;
     align-items: center;
-    gap: 32px;
-    padding: 32px;
+    gap: 28px;
+    padding: 28px 18px;
     max-width: 900px;
-    margin: 48px auto;
+    /* Harmonizado com skills */
+    margin: 40px auto;
     background: var(--surface);
-    border-radius: 16px;
+    border-radius: 18px;
     box-shadow: var(--shadow-sm);
     border: 1px solid var(--line);
+    transition: max-width 0.3s, padding 0.3s;
 }
 
+@media (max-width: 800px) {
+    .about-content {
+        grid-template-columns: 1fr;
+        align-items: center;
+        max-width: 98vw;
+        padding: 18px 6px;
+    }
+
+    .profile-image {
+        width: 160px;
+        height: 210px;
+    }
+
+    .profile-text {
+        min-height: unset;
+    }
+}
+
+
+.about-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    min-width: 160px;
+    max-width: 200px;
+}
+
+.about-left h2 {
+    margin-bottom: 40px;
+}
+
+
 .profile-image {
-    width: 240px;
-    height: 320px;
+    width: 200px;
+    height: 260px;
     object-fit: cover;
     border-radius: 18px;
     border: 4px solid var(--accent);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+    background: #222;
 }
 
 .profile-caption span {
-    font-size: 0.95rem;
+    font-size: 0.98rem;
     color: var(--muted);
+    font-style: italic;
 }
 
 .profile-text {
@@ -222,6 +323,9 @@ h2::after {
     color: var(--muted);
     line-height: 1.7;
     text-align: left;
+    margin: 0;
+    min-height: 260px;
+    padding-left: 0;
 }
 
 /* ======================================
@@ -261,13 +365,26 @@ h2::after {
 }
 
 /* Imagens dos cards de projetos */
+.card-img-top-main,
 .card-img-top {
     width: 100%;
-    height: 120px;
+    height: 160px;
     object-fit: contain;
     background: #222;
     border-radius: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 22px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card-img-top-main {
+    width: 100%;
+    height: 160px;
+    object-fit: contain;
+    background: #222;
+    border-radius: 10px;
+    margin-bottom: 22px;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -391,36 +508,57 @@ h2::after {
 }
 
 /* ======================================
- * Seção de Habilidades (Skills)
+ * Seção de Habilidades (Skills) – Ajuste de Aparência
  * ====================================== */
 .skills {
-    max-width: 600px;
+    max-width: 500px;
+    /* menor largura para ficar mais compacto */
     margin: 48px auto;
     background: var(--surface);
     border-radius: 16px;
     box-shadow: var(--shadow-sm);
-    padding: 24px;
+    padding: 24px 18px;
+    text-align: center;
+    border: 1px solid var(--line);
+}
+
+
+.skills {
+    max-width: 900px;
+    /* Mais largo para harmonia com o layout */
+    margin: 48px auto;
+    background: var(--surface);
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+    padding: 32px 24px;
     text-align: center;
     border: 1px solid var(--line);
 }
 
 .skills ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px 12px;
     padding: 0;
     list-style: none;
+    justify-items: center;
+    align-items: stretch;
 }
 
 .skills li {
     background: #222;
     color: var(--muted);
-    padding: 6px 14px;
+    padding: 6px 10px;
     border-radius: 8px;
     font-size: 0.95rem;
     font-weight: 500;
     transition: background-color 0.2s;
+    width: 100%;
+    /* ocupa espaço proporcional na coluna */
+    max-width: 130px;
+    /* evita que fiquem muito largos */
+    box-sizing: border-box;
+    text-align: center;
 }
 
 .skills li:hover {
@@ -428,11 +566,35 @@ h2::after {
 }
 
 .skills li i {
-    font-size: 1.5em;
-    margin-right: 8px;
+    font-size: 1.4em;
+    /* leve redução para ficar proporcional */
+    margin-right: 6px;
     vertical-align: middle;
     color: var(--accent);
     text-shadow: 0 0 4px rgba(166, 140, 44, 0.25);
+}
+
+/* ======================================
+ * Responsividade – Skills
+ * ====================================== */
+@media (max-width: 480px) {
+    .skills ul {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 10px 6px;
+    }
+
+    .skills h2 {
+        font-size: 1.4rem;
+    }
+
+    .skills li {
+        font-size: 0.9rem;
+        padding: 6px 8px;
+    }
+
+    .skills li i {
+        font-size: 1.2em;
+    }
 }
 
 /* ======================================
@@ -577,6 +739,31 @@ h2::after {
 
     .carousel-arrow.right {
         right: 8px;
+    }
+
+    /* Responsividade específica para skills */
+    .skills {
+        max-width: 98vw;
+        padding: 18px 6px;
+    }
+
+    .skills ul {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px 8px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    /* Responsividade ainda mais forte para skills */
+    .skills {
+        max-width: 100vw;
+        padding: 10px 2px;
+    }
+
+    .skills ul {
+        grid-template-columns: 1fr;
+        gap: 10px 4px;
     }
 }
 
