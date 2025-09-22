@@ -9,6 +9,14 @@ Um portfólio moderno e interativo que demonstra habilidades técnicas, projetos
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
+## 📸 **Preview do Portfolio**
+
+<div align="center">
+  <img src="./portfólio novo.png" alt="Portfolio Screenshot" width="100%" style="border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+</div>
+
+*Captura de tela mostrando a interface moderna e responsiva do portfólio*
+
 ## 🌐 **Acesso Rápido**
 **🔗 [Ver Portfolio Online](https://alisson-miguelferreira.github.io/meu-site/)**
 
@@ -164,35 +172,6 @@ portfólio/
 
 ## 🚀 **Como Executar**
 
-### **Opção 1: Visualização Direta**
-```bash
-# Clone o repositório
-git clone https://github.com/alisson-miguelferreira/meu-site.git
-
-# Navegue até o diretório
-cd meu-site
-
-# Abra o index.html no seu navegador preferido
-open index.html  # macOS
-start index.html # Windows
-xdg-open index.html # Linux
-```
-
-### **Opção 2: Servidor Local**
-```bash
-# Com Python 3
-python -m http.server 8000
-
-# Com Node.js
-npx http-server -p 8000
-
-# Com PHP
-php -S localhost:8000
-
-# Acesse: http://localhost:8000
-```
-
-### **Opção 3: GitHub Pages**
 O projeto está hospedado no GitHub Pages:
 **[https://alisson-miguelferreira.github.io/meu-site/](https://alisson-miguelferreira.github.io/meu-site/)**
 
@@ -240,18 +219,6 @@ O projeto está hospedado no GitHub Pages:
 - ✅ Imagens otimizadas para diferentes telas
 - ✅ Touch-friendly interactions
 
----
-
-## 📈 **Próximas Melhorias**
-
-- [ ] Implementar dark/light theme toggle
-- [ ] Adicionar filtros nos projetos por tecnologia
-- [ ] Integrar blog/artigos técnicos
-- [ ] Implementar formulário de contato funcional
-- [ ] Adicionar métricas de analytics
-- [ ] Otimizar ainda mais para Lighthouse scores
-
----
 
 ## 📞 **Contato Profissional**
 
@@ -264,13 +231,7 @@ O projeto está hospedado no GitHub Pages:
 - 🐙 **GitHub**: [github.com/alisson-miguelferreira](https://github.com/alisson-miguelferreira)
 - 💬 **WhatsApp**: [(49) 99113-7577](https://wa.me/5549991137577)
 
----
 
-## 📄 **Licença**
-
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
----
 
 **© 2025 Alisson Miguel Ferreira. Desenvolvido com dedicação e paixão por tecnologia.**
 
