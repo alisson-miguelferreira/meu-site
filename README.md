@@ -11,9 +11,7 @@ Um portfólio moderno e interativo que demonstra habilidades técnicas, projetos
 
 ## 📸 **Preview do Portfolio**
 
-<div align="center">
-  <img src="./portfólio novo.png" alt="Portfolio Screenshot" width="100%" style="border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
-</div>
+![Portfolio Screenshot](assets/portfolio-novo.png)
 
 *Captura de tela mostrando a interface moderna e responsiva do portfólio*
 
