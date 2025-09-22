@@ -1,341 +1,575 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alisson Miguel Ferreira — Desenvolvedor Full-Stack</title>
+    <title>Alisson Miguel Ferreira | Elite Full-Stack Developer</title>
 
-    <!-- Meta description para SEO -->
-    <meta name="description"
-        content="Portfólio do Alisson Miguel Ferreira: projetos em HTML, CSS e JavaScript com foco em performance, acessibilidade e UI moderna.">
+    <!-- Ícones Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Fonte Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 
-    <!-- Canonical -->
-    <link rel="canonical" href="https://alisson-miguelferreira.github.io/meu-site/">
-
-    <!-- Favicon / Manifest -->
-    <link rel="icon" href="./favicon.ico" sizes="any">
-    <link rel="icon" href="./icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="./apple-touch-icon.png">
-    <link rel="manifest" href="./site.webmanifest">
-
-    <!-- Open Graph para redes sociais -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Portfólio — Alisson Miguel Ferreira">
-    <meta property="og:description"
-        content="Desenvolvedor Front End/Full-Stack. Projetos com foco em qualidade, acessibilidade e boas práticas.">
-    <meta property="og:url" content="https://alisson-miguelferreira.github.io/meu-site/">
-    <meta property="og:image" content="https://alisson-miguelferreira.github.io/meu-site/og-image.jpg">
-
-    <!-- Twitter Cards -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Portfólio — Alisson Miguel Ferreira">
-    <meta name="twitter:description" content="Projetos Front-end com foco em performance e UX.">
-    <meta name="twitter:image" content="https://alisson-miguelferreira.github.io/meu-site/og-image.jpg">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="./styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
-    <!-- JSON-LD para SEO -->
-    <script type="application/ld+json">
-        {
-            "@context":"https://schema.org",
-            "@type":"Person",
-            "name":"Alisson Miguel Ferreira",
-            "jobTitle":"Desenvolvedor Front End",
-            "url":"https://alisson-miguelferreira.github.io/meu-site/",
-            "sameAs":[
-              "https://github.com/alisson-miguelferreira",
-              "https://www.linkedin.com/in/alisson-miguelferreira/"
-            ]
-        }
-    </script>
+    <!-- Arquivo CSS principal -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- Fundo animado de estrelas -->
-    <canvas id="stars-bg" aria-hidden="true"></canvas>
+    <!-- Background animado com formas geométricas -->
+    <div class="animated-bg">
+        <div class="bg-shapes">
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+    </div>
 
-    <header class="custom-navbar" role="navigation" aria-label="Navegação principal">
-        <!-- Navegação principal -->
-        <nav aria-label="Seções do site">
-            <a href="#about">Sobre Mim</a>
-            <a href="#skills">Skills</a>
-            <a href="#highlights">Projetos</a>
-            <a href="#contact">Contato</a>
-            <a href="https://wa.me/5549991137577?text=Ol%C3%A1%20Alisson%2C%20eu%20visitei%20seu%20site%20pessoal%20e%20gostaria%20de%20solicitar%20un%20or%C3%A7amento%2C%20meu%20nome%20%C3%A9..."
-                target="_blank" rel="noopener" class="btn-contato">Fale comigo</a>
-        </nav>
-    </header>
+    <!-- Sistema de partículas animadas -->
+    <div class="particles" id="particles"></div>
 
-    <!-- Frase de destaque principal -->
-    <h1 class="destaque-frase">Da imaginação à tela. Transformando ideias em realidade com código.</h1>
+    <!-- Cursor personalizado com efeito neon -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-trail" id="cursorTrail"></div>
 
-    <main id="conteudo">
-        <!-- Seção Sobre Mim -->
-        <section id="about" aria-labelledby="titulo-sobre">
-            <div class="about-content">
-                <div class="about-left">
-                    <img src="./assets/profile photo.jpeg" alt="Foto de Alisson Miguel Ferreira" class="profile-image"
-                        width="240" height="320" loading="lazy" decoding="async">
-                    <p class="profile-caption">
-                        Alisson Miguel Ferreira<br>
-                        <span>Desenvolvedor Full-Stack</span>
-                    </p>
-                </div>
-                <p class="profile-text" id="sobre-mim">
-                    Olá! Meu nome é Alisson Miguel Ferreira e sou apaixonado por tecnologia e inovação. Muito além de
-                    criar sites, desenvolvo soluções digitais que resolvem problemas reais e impulsionam negócios. Busco
-                    sempre aprender novas ferramentas e linguagens para aprimorar meus projetos, combinando
-                    criatividade, eficiência e foco em resultados. Este site é um espaço para apresentar minha evolução,
-                    compartilhar ideias e conectar com outros profissionais. Meu objetivo é transformar desafios em
-                    oportunidades, contribuindo para o crescimento do universo digital.
+    <!-- Menu de navegação flutuante -->
+    <nav class="nav">
+        <a href="#home" class="nav-item" title="Home">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="#skills" class="nav-item" title="Skills">
+            <i class="fas fa-code"></i>
+            <span>Skills</span>
+        </a>
+        <a href="#projects" class="nav-item" title="Projetos">
+            <i class="fas fa-rocket"></i>
+            <span>Projetos</span>
+        </a>
+        <a href="#contact" class="nav-item" title="Contato">
+            <i class="fas fa-paper-plane"></i>
+            <span>Contato</span>
+        </a>
+    </nav>
+
+    <!-- Seção Hero - Apresentação principal -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <!-- Badge de destaque -->
+            <div class="hero-badge">✨ Desenvolvedor Frontend em Evolução Full-Stack</div>
+
+            <!-- Avatar com efeito pulsante -->
+            <div class="hero-avatar">
+                <img src="assets/profile photo.jpeg" alt="Alisson Miguel Ferreira" class="avatar-image">
+                <div class="avatar-inner"></div>
+            </div>
+
+            <!-- Título principal com efeito gradiente -->
+            <h1 class="hero-title">Alisson Miguel Ferreira</h1>
+            <h2 class="hero-subtitle">Transformando Ideias em Realidade Digital</h2>
+
+            <!-- Descrição profissional -->
+            <p class="hero-description">
+                Especialista em criar soluções digitais inovadoras e experiências web que impulsionam negócios.
+                Combinando design moderno, tecnologia de ponta e estratégia de resultado para entregar projetos que
+                fazem a diferença.
+            </p>
+
+            <!-- Botões de call-to-action -->
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary">
+                    <i class="fas fa-rocket"></i>
+                    Explorar Projetos
+                </a>
+                <a href="https://drive.google.com/file/d/1qLP3tpnCcEzbUGpynGnljjPgacdVaCdY/view?usp=sharing"
+                    class="btn btn-secondary btn-download" target="_blank">
+                    <i class="fas fa-download"></i>
+                    <span>Download CV</span>
+                    <div class="download-effect"></div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Skills/Competências -->
+    <section class="section skills" id="skills">
+        <div class="container">
+            <!-- Cabeçalho da seção -->
+            <div class="section-header scroll-reveal">
+                <div class="section-badge">💻 Expertise Técnica</div>
+                <h2 class="section-title">Tecnologias & Competências</h2>
+                <p class="section-description">
+                    Desenvolvedor Frontend em constante evolução, com sólidos conhecimentos em interfaces modernas e
+                    expandindo horizontes para tecnologias Full-Stack e inteligência artificial.
                 </p>
             </div>
-        </section>
 
-        <!-- Seção Skills / Competências Técnicas -->
-        <section id="skills">
-            <div class="skills-content skills">
-                <h2>🛠️ Skills <span class="skills-subtitle">(Principais competências técnicas)</span></h2>
-                <ul>
-                    <li><i class="fab fa-git-alt"></i> Git &nbsp;<i class="fab fa-github"></i> GitHub</li>
-                    <li><i class="fas fa-mobile-alt"></i> Responsividade / Mobile First</li>
-                    <li><i class="fa-solid fa-robot"></i> IAs generativas</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 121.3 512.1 269.6"
-                            style="width:2em;height:2em;vertical-align:middle;margin-right:8px;">
-                            <path
-                                d="M458.1 229.1c-25.1 0-46.2-17.2-52.2-40.4h-61.8c-13.2 0-24.4 9.5-26.6 22.5l-2.2 13.3c-2 12.2-8.2 23.4-17.5 31.6 9.3 8.2 15.5 19.3 17.5 31.6l2.2 13.3c2.2 13 13.4 22.5 26.6 22.5h7.9c6-23.2 27.1-40.4 52.2-40.4 29.8 0 53.9 24.1 53.9 53.9s-24.1 53.9-53.9 53.9c-25.1 0-46.2-17.2-52.2-40.4h-7.9c-26.3 0-48.8-19-53.2-45l-2.2-13.3c-2.2-13-13.4-22.5-26.6-22.5h-21.4c-6 23.2-27.1 40.4-52.2 40.4s-46.2-17.2-52.2-40.4H106c-6 23.2-27.1 40.4-52.2 40.4C24.1 309.9 0 285.8 0 256s24.1-53.9 53.9-53.9c25.1 0 46.2 17.2 52.2 40.4h30.3c6-23.2 27.1-40.4 52.2-40.4s46.2 17.2 52.2 40.4h21.4c13.2 0 24.4-9.5 26.6-22.5l2.2-13.3c4.3-26 26.8-45 53.2-45H406c6-23.2 27.1-40.4 52.2-40.4 29.8 0 53.9 24.1 53.9 53.9s-24.2 53.9-54 53.9m0-27c14.9 0 26.9-12.1 26.9-26.9s-12.1-26.9-26.9-26.9-26.9 12.1-26.9 26.9 12 26.9 26.9 26.9M53.9 282.9c14.9 0 26.9-12.1 26.9-26.9s-12.1-26.9-26.9-26.9-27 12-27 26.9 12.1 26.9 27 26.9M215.6 256c0 14.9-12.1 26.9-26.9 26.9s-26.9-12.1-26.9-26.9 12.1-26.9 26.9-26.9 26.9 12 26.9 26.9m215.6 80.8c0 14.9-12.1 26.9-26.9 26.9-14.9 0-26.9-12.1-26.9-26.9s12.1-26.9 26.9-26.9 26.9 12.1 26.9 26.9"
-                                style="fill-rule:evenodd;clip-rule:evenodd;fill:#d4af37;" />
-                        </svg> N8N <span style="font-size:0.85em;color:#d4af37;">(estudando)</span></li>
-                    <li><i class="fab fa-react"></i> React <span
-                            style="font-size:0.85em;color:#d4af37;">(estudando)</span></li>
-                    <li><i class="fab fa-node-js"></i> Node.js <span
-                            style="font-size:0.85em;color:#d4af37;">(estudando)</span></li>
-                    <li><i class="fab fa-css3-alt"></i> CSS3</li>
-                    <li><i class="fab fa-html5"></i> HTML5</li>
-                    <li><i class="fab fa-js"></i> JavaScript</li>
-                    <li><i class="fab fa-bootstrap"></i> Bootstrap</li>
-                    <li><i class="fa-solid fa-code"></i> VS Code</li>
-                    <li><i class="fab fa-figma"></i> Figma</li>
-                </ul>
-            </div>
-        </section>
+            <!-- Grid de cards de skills -->
+            <div class="skills-grid">
+                <!-- Card Frontend -->
+                <div class="skill-card scroll-reveal">
+                    <div class="skill-icon">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <h3 class="skill-title">Frontend Avançado</h3>
+                    <p class="skill-description">
+                        Criação de interfaces modernas, responsivas e performáticas com foco na experiência do usuário.
+                    </p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">HTML5 Semântico</span>
+                        <span class="skill-tag">CSS3 Avançado</span>
+                        <span class="skill-tag">JavaScript ES6+</span>
+                        <span class="skill-tag">Responsive Design</span>
+                        <span class="skill-tag">Animations & Transitions</span>
+                        <span class="skill-tag">Bootstrap & Frameworks</span>
+                    </div>
+                </div>
 
+                <!-- Card Backend -->
+                <div class="skill-card scroll-reveal">
+                    <div class="skill-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="skill-title">Backend & APIs</h3>
+                    <p class="skill-description">
+                        Focado em aprender desenvolvimento server-side e criação de APIs. Estudando Node.js para
+                        construir servidores web e React.js para interfaces dinâmicas.
+                    </p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Node.js (Estudando)</span>
+                        <span class="skill-tag">React.js (Estudando)</span>
+                        <span class="skill-tag">REST APIs</span>
+                        <span class="skill-tag">JavaScript Backend</span>
+                    </div>
+                </div>
 
-        <!-- Seção Projetos em Destaque -->
-        <section id="highlights">
-            <h2 class="projects-title destaque-title">Projetos em Destaque</h2>
-            <div class="cards-container">
-                <!-- Card: Reprodução do site Microsoft -->
-                <div class="card project-card h-100 mx-auto card-projects">
-                    <img src="./assets/Microsoft-print.png" class="card-img-top-main"
-                        alt="Reprodução do site Microsoft">
-                    <div class="card-body">
-                        <h5 class="card-title">Reprodução do site Microsoft</h5>
-                        <p class="card-text">Página inspirada no site oficial da Microsoft, com layout moderno e fiel,
-                            menu
-                            responsivo e seções para produtos como Copilot, Microsoft 365, Xbox, Edge e Visual Studio,
-                            simulando a experiência real de navegação.</p>
+                <!-- Card DevOps -->
+                <div class="skill-card scroll-reveal">
+                    <div class="skill-icon">
+                        <i class="fab fa-git-alt"></i>
                     </div>
-                    <div class="card-footer">
-                        <a href="https://alisson-miguelferreira.github.io/copia-site-Microsoft/" target="_blank"
-                            rel="noopener" class="btn btn-primary">Ver projeto</a>
+                    <h3 class="skill-title">DevOps & Ferramentas</h3>
+                    <p class="skill-description">
+                        Conhecimento de ferramentas essenciais para desenvolvimento web, controle de versão e melhoria
+                        de sites.
+                    </p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git & GitHub</span>
+                        <span class="skill-tag">VS Code Pro</span>
+                        <span class="skill-tag">Encontrar e Corrigir Erros</span>
+                        <span class="skill-tag">Otimizar Sites</span>
                     </div>
                 </div>
-                <!-- Card: E-commerce TecStore -->
-                <div class="card project-card h-100 mx-auto card-projects">
-                    <img src="./assets/e-commerce preview tela 1.png" class="card-img-top-main"
-                        alt="E-commerce TecStore">
-                    <div class="card-body">
-                        <h5 class="card-title">E-commerce TecStore</h5>
-                        <p class="card-text">Projeto de loja virtual desenvolvido para simular a compra de produtos de
-                            tecnologia. Conta com catálogo de produtos, carrinho de compras e interface responsiva,
-                            oferecendo uma experiência prática e intuitiva para o usuário.</p>
+
+                <!-- Card IA & Automação -->
+                <div class="skill-card scroll-reveal">
+                    <div class="skill-icon">
+                        <i class="fas fa-robot"></i>
                     </div>
-                    <div class="card-footer">
-                        <a href="https://alisson-miguelferreira.github.io/e-commerce/" target="_blank" rel="noopener"
-                            class="btn btn-primary">Ver projeto</a>
-                    </div>
-                </div>
-                <!-- Card: Conversor de Moedas -->
-                <div class="card project-card h-100 mx-auto card-projects">
-                    <img src="./assets/conversor de moedas.png" class="card-img-top-main" alt="Conversor de Moedas">
-                    <div class="card-body">
-                        <h5 class="card-title">Conversor de Moedas</h5>
-                        <p class="card-text">Ferramenta de conversão que realiza cálculos imediatos entre real, dólar,
-                            euro, libra esterlina e bitcoin, utilizando cotações reais atualizadas para garantir
-                            resultados precisos e confiáveis.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="https://alisson-miguelferreira.github.io/conversor-de-moedas/" target="_blank"
-                            rel="noopener" class="btn btn-primary">Ver projeto</a>
-                    </div>
-                </div>
-                <!-- Card: Jokenpô He-Man -->
-                <div class="card project-card h-100 mx-auto card-projects">
-                    <img src="./assets/Jokenpô He-man print.png" class="card-img-top-main" alt="Jokenpô He-Man">
-                    <div class="card-body">
-                        <h5 class="card-title">Jokenpô He-Man Edition</h5>
-                        <p class="card-text">Jokenpô ambientado no universo de He-Man. Você joga como He-Man contra a
-                            máquina (Esqueleto), escolhendo aleatoriamente entre pedra, papel ou tesoura; o resultado
-                            aparece em tempo real na tela.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="https://alisson-miguelferreira.github.io/JokenPo-He-Man/" target="_blank"
-                            rel="noopener" class="btn btn-primary">Ver projeto</a>
-                    </div>
-                </div>
-                <!-- Card: Encanadores Mario & Luigi -->
-                <div class="card project-card card-projects">
-                    <img src="./assets/print tela.png" class="card-img-top-main"
-                        alt="Site institucional fictício Mario & Luigi">
-                    <div class="card-body">
-                        <h5 class="card-title">Encanadores Mario & Luigi</h5>
-                        <p class="card-text">Site institucional fictício para a empresa Mario & Luigi, oferecendo
-                            serviços
-                            de encanamento residencial, comercial e técnico. Apresenta os serviços de forma clara e
-                            organizada, com design moderno, responsivo e fácil navegação.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="https://alisson-miguelferreira.github.io/Projeto-irmaos-Mario-encanadores/"
-                            target="_blank" rel="noopener" class="btn btn-primary">Ver projeto</a>
-                    </div>
-                </div>
-                <!-- Card: Sorteador de Números -->
-                <div class="card project-card card-projects">
-                    <img src="./assets/Sorteador.png" class="card-img-top-main" alt="Sorteador de Números">
-                    <div class="card-body">
-                        <h5 class="card-title">Sorteador de Números</h5>
-                        <p class="card-text">Sorteador de números dinâmico desenvolvido com HTML, CSS e JavaScript. O
-                            usuário define os valores mínimo e máximo e recebe instantaneamente um número aleatório
-                            dentro do intervalo, com design moderno, responsivo e de fácil utilização.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="https://alisson-miguelferreira.github.io/sorteador/" target="_blank" rel="noopener"
-                            class="btn btn-primary">Ver projeto</a>
+                    <h3 class="skill-title">IA & Automação</h3>
+                    <p class="skill-description">
+                        Utilizo inteligência artificial para acelerar desenvolvimento e aumentar produtividade.
+                        Experimento com ferramentas de IA generativa e automação de fluxos de trabalho para otimizar
+                        processos.
+                    </p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">IA Generativa</span>
+                        <span class="skill-tag">Automação de Fluxos</span>
+                        <span class="skill-tag">Otimização de Processos</span>
+                        <span class="skill-tag">Assistentes de Código</span>
+                        <span class="skill-tag">Ferramentas No-Code</span>
+                        <span class="skill-tag">Produtividade IA</span>
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- Seção Demais Projetos -->
-        <section id="projects">
-            <h2 class="projects-title demais-title">Demais Projetos</h2>
-            <div class="cards-container">
-                <!-- Card: Página de login funcional -->
-                <div class="card project-card card-projects">
-                    <img src="./assets/login-page-print.png" class="card-img-top-main" alt="Página de login funcional">
-                    <div class="card-body">
-                        <h5 class="card-title">Página de login funcional</h5>
-                        <p class="card-text">Interface de página de login intuitiva, com planos de fundo dinâmicos
-                            alternados a cada interação.</p>
+        </div>
+    </section>
+
+    <!-- Seção de Projetos -->
+    <section class="section projects" id="projects">
+        <div class="container">
+            <!-- Cabeçalho da seção -->
+            <div class="section-header scroll-reveal">
+                <div class="section-badge">🚀 Portfolio</div>
+                <h2 class="section-title">Projetos em Destaque</h2>
+                <p class="section-description">
+                    Uma seleção dos meus trabalhos mais impactantes, demonstrando expertise técnica e criatividade em
+                    ação.
+                </p>
+            </div>
+
+            <!-- Grid de projetos -->
+            <div class="projects-grid">
+                <!-- Projeto 1: TecStore E-commerce -->
+                <div class="project-card scroll-reveal">
+                    <div class="project-image">
+                        <img src="assets/e-commerce preview tela 1.png" alt="TecStore E-commerce Platform"
+                            class="project-img">
                     </div>
-                    <div class="card-footer">
-                        <a href="https://alisson-miguelferreira.github.io/pagina-login/" target="_blank" rel="noopener"
-                            class="btn btn-primary">Ver projeto</a>
+                    <div class="project-content">
+                        <h3 class="project-title">TecStore E-commerce Platform</h3>
+                        <p class="project-description">
+                            Projeto de loja virtual desenvolvido para demonstrar habilidades em frontend. Conta com
+                            catálogo de produtos de tecnologia, carrinho de compras funcional e interface totalmente
+                            responsiva, oferecendo uma experiência prática e intuitiva para simulação de compras online.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Responsive Design</span>
+                            <span class="tech-tag">Local Storage</span>
+                            <span class="tech-tag">DOM Manipulation</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://alisson-miguelferreira.github.io/e-commerce/" target="_blank"
+                                class="project-link primary">Live Demo</a>
+                            <a href="https://github.com/alisson-miguelferreira/e-commerce" target="_blank"
+                                class="project-link secondary">GitHub</a>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Projeto 2: Conversor de Moedas -->
+                <div class="project-card scroll-reveal">
+                    <div class="project-image">
+                        <img src="assets/conversor de moedas.png" alt="Conversor de Moedas" class="project-img">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Conversor de Moedas</h3>
+                        <p class="project-description">
+                            Ferramenta prática de conversão que realiza cálculos instantâneos entre real, dólar, euro,
+                            libra esterlina e bitcoin. Utiliza APIs de cotações reais para garantir resultados precisos
+                            e atualizados, oferecendo uma interface clean e responsiva para conversões rápidas e
+                            confiáveis.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">API Integration</span>
+                            <span class="tech-tag">Fetch API</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">Responsive Design</span>
+                            <span class="tech-tag">Real-time Data</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://alisson-miguelferreira.github.io/conversor-de-moedas/" target="_blank"
+                                class="project-link primary">Live Demo</a>
+                            <a href="https://github.com/alisson-miguelferreira/conversor-de-moedas" target="_blank"
+                                class="project-link secondary">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto 3: Clone Microsoft -->
+                <div class="project-card scroll-reveal">
+                    <div class="project-image">
+                        <img src="assets/Microsoft-print.png" alt="Microsoft Homepage Clone" class="project-img">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Microsoft Homepage Clone</h3>
+                        <p class="project-description">
+                            Página inspirada no site oficial da Microsoft, com layout moderno e fiel ao original. Conta
+                            com menu responsivo e seções dedicadas para produtos como Copilot, Microsoft 365, Xbox, Edge
+                            e Visual Studio, simulando fielmente a experiência real de navegação no site da Microsoft.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3 Grid</span>
+                            <span class="tech-tag">CSS Flexbox</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Responsive Design</span>
+                            <span class="tech-tag">Cross-browser</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://alisson-miguelferreira.github.io/copia-site-Microsoft/" target="_blank"
+                                class="project-link primary">Live Demo</a>
+                            <a href="https://github.com/alisson-miguelferreira/copia-site-Microsoft" target="_blank"
+                                class="project-link secondary">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto 4: Jogo He-Man -->
+                <div class="project-card scroll-reveal">
+                    <div class="project-image">
+                        <img src="assets/Jokenpô He-man print.png" alt="He-Man Interactive Game" class="project-img">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">He-Man Interactive Game</h3>
+                        <p class="project-description">
+                            JokenPô Épico: He-Man vs Skeletor — Entre na arena de Grayskull e escolha sua arma para
+                            enfrentar o vilão em batalhas intensas! O jogo abre com um efeito sonoro épico, e durante a
+                            partida o background animado mantém a atmosfera heróica e sombria, enquanto animações sutis
+                            nos botões tornam a experiência interativa.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">CSS3 Animations</span>
+                            <span class="tech-tag">Web Audio API</span>
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">Game Logic</span>
+                            <span class="tech-tag">Responsive Design</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://alisson-miguelferreira.github.io/JokenPo-He-Man/" target="_blank"
+                                class="project-link primary">Jogar Agora</a>
+                            <a href="https://github.com/alisson-miguelferreira/JokenPo-He-Man" target="_blank"
+                                class="project-link secondary">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto 5: Mario & Luigi Services -->
+                <div class="project-card scroll-reveal">
+                    <div class="project-image">
+                        <img src="assets/print tela.png" alt="Mario & Luigi Services" class="project-img">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Mario & Luigi Services</h3>
+                        <p class="project-description">
+                            Site institucional fictício para empresa de encanamento, apresentando serviços completos de
+                            forma organizada. Conta com design responsivo, navegação intuitiva, integração com WhatsApp
+                            e formulário de contato funcional para orçamentos.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Google Fonts</span>
+                            <span class="tech-tag">Responsive Design</span>
+                            <span class="tech-tag">Form Integration</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://alisson-miguelferreira.github.io/Projeto-irmaos-Mario-encanadores/"
+                                target="_blank" class="project-link primary">Live Demo</a>
+                            <a href="https://github.com/alisson-miguelferreira/Projeto-irmaos-Mario-encanadores"
+                                target="_blank" class="project-link secondary">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto 6: Página de Login Funcional -->
+                <div class="project-card scroll-reveal">
+                    <div class="project-image">
+                        <img src="assets/login-page-print.png" alt="Página de Login Funcional" class="project-img">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Página de Login Funcional</h3>
+                        <p class="project-description">
+                            Interface de página de login intuitiva e moderna, com planos de fundo dinâmicos que se
+                            alternam a cada interação do usuário. Desenvolvida com foco na experiência visual e
+                            usabilidade, proporcionando um ambiente atrativo e funcional para autenticação.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">CSS Animations</span>
+                            <span class="tech-tag">Responsive Design</span>
+                            <span class="tech-tag">UX/UI Design</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://alisson-miguelferreira.github.io/pagina-login/" target="_blank"
+                                class="project-link primary">Live Demo</a>
+                            <a href="https://github.com/alisson-miguelferreira/pagina-login" target="_blank"
+                                class="project-link secondary">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Demais Projetos -->
+    <section class="section more-projects" id="more-projects">
+        <div class="container">
+            <!-- Cabeçalho da seção -->
+            <div class="section-header scroll-reveal">
+                <div class="section-badge">⚡ Outros Projetos</div>
+                <h2 class="section-title">Demais Projetos</h2>
+                <p class="section-description">
+                    Projetos complementares que demonstram versatilidade e exploração de diferentes tecnologias.
+                </p>
+            </div>
+
+            <!-- Grid de projetos menores -->
+            <div class="more-projects-grid">
+                <!-- Card: Sorteador -->
+                <div class="more-project-card scroll-reveal">
+                    <div class="more-project-image">
+                        <img src="assets/Sorteador.png" alt="Sorteador" class="more-project-img">
+                    </div>
+                    <div class="more-project-content">
+                        <h4 class="more-project-title">Sorteador</h4>
+                        <p class="more-project-description">
+                            Aplicação web interativa para sorteios aleatórios com interface moderna e animações suaves.
+                        </p>
+                        <a href="https://alisson-miguelferreira.github.io/sorteador/" target="_blank"
+                            class="more-project-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            Ver Projeto
+                        </a>
+                    </div>
+                </div>
+
                 <!-- Card: Cronometro -->
-                <div class="card project-card card-projects">
-                    <img src="./assets/Cronometro.png" class="card-img-top-main" alt="Cronômetro">
-                    <div class="card-body">
-                        <h5 class="card-title">Cronômetro</h5>
-                        <p class="card-text">Cronômetro simples em HTML, CSS e JavaScript: iniciar, pausar e reiniciar
-                            com design responsivo.</p>
+                <div class="more-project-card scroll-reveal">
+                    <div class="more-project-image">
+                        <img src="assets/Cronometro.png" alt="Cronômetro" class="more-project-img">
                     </div>
-                    <div class="card-footer">
-                        <a href="https://alisson-miguelferreira.github.io/cronometro/" target="_blank" rel="noopener"
-                            class="btn btn-primary">Ver projeto</a>
+                    <div class="more-project-content">
+                        <h4 class="more-project-title">Cronômetro</h4>
+                        <p class="more-project-description">
+                            Cronômetro simples em HTML, CSS e JavaScript: iniciar, pausar e reiniciar com design
+                            responsivo.
+                        </p>
+                        <a href="https://alisson-miguelferreira.github.io/cronometro/" target="_blank"
+                            class="more-project-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            Ver Projeto
+                        </a>
                     </div>
                 </div>
+
                 <!-- Card: Easy Shopping -->
-                <div class="card project-card card-projects">
-                    <img src="./assets/EEasy-shopping-print.jpg" class="card-img-top-main" alt="Easy Shopping">
-                    <div class="card-body">
-                        <h5 class="card-title">Easy Shopping</h5>
-                        <p class="card-text">Landing page responsiva para um serviço de compras em dispositivos móveis,
-                            com layout moderno e tipografia elegante.</p>
+                <div class="more-project-card scroll-reveal">
+                    <div class="more-project-image">
+                        <img src="assets/EEasy-shopping-print.jpg" alt="Easy Shopping" class="more-project-img">
                     </div>
-                    <div class="card-footer">
-                        <a href="https://alisson-miguelferreira.github.io/Easy-Shopping/" target="_blank" rel="noopener"
-                            class="btn btn-primary">Ver projeto</a>
+                    <div class="more-project-content">
+                        <h4 class="more-project-title">Easy Shopping</h4>
+                        <p class="more-project-description">
+                            Landing page fictícia, responsiva para um serviço de compras em dispositivos móveis, com
+                            layout
+                            moderno e tipografia elegante.
+                        </p>
+                        <a href="https://alisson-miguelferreira.github.io/Easy-Shopping/" target="_blank"
+                            class="more-project-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            Ver Projeto
+                        </a>
                     </div>
                 </div>
+
                 <!-- Card: Positive congratulation -->
-                <div class="card project-card card-projects">
-                    <img src="./assets/Positive congratulation print.png" class="card-img-top-main"
-                        alt="Positive Congratulation">
-                    <div class="card-body">
-                        <h5 class="card-title">Positive Congratulation</h5>
-                        <p class="card-text">Landing page fictícia e responsiva para uma plataforma de mobilidade
-                            urbana, com layout moderno, responsivo e intuitivo.</p>
+                <div class="more-project-card scroll-reveal">
+                    <div class="more-project-image">
+                        <img src="assets/Positive congratulation print.png" alt="Positive Congratulation"
+                            class="more-project-img">
                     </div>
-                    <div class="card-footer">
+                    <div class="more-project-content">
+                        <h4 class="more-project-title">Positive Congratulation</h4>
+                        <p class="more-project-description">
+                            Landing page fictícia e responsiva para uma plataforma de mobilidade urbana, com layout
+                            moderno, responsivo e intuitivo.
+                        </p>
                         <a href="https://alisson-miguelferreira.github.io/Positive-Congratulation/" target="_blank"
-                            rel="noopener" class="btn btn-primary">Ver projeto</a>
+                            class="more-project-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            Ver Projeto
+                        </a>
                     </div>
                 </div>
+
                 <!-- Card: We Care Pet -->
-                <div class="card project-card card-projects">
-                    <img src="./assets/captura-tela-we-care.png" class="card-img-top-main"
-                        alt="We Care Pet (clínica veterinária fictícia)">
-                    <div class="card-body">
-                        <h5 class="card-title">We Care Pet</h5>
-                        <p class="card-text">O We Care Pet é uma landing page elegante e responsiva desenvolvida para
-                            fins educacionais. Seu objetivo é simular um site institucional de uma clínica veterinária,
-                            com navegação clara e um visual limpo, moderno e amigável ao usuário.</p>
+                <div class="more-project-card scroll-reveal">
+                    <div class="more-project-image">
+                        <img src="assets/captura-tela-we-care.png" alt="We Care Pet Clinic" class="more-project-img">
                     </div>
-                    <div class="card-footer">
-                        <a href="https://alisson-miguelferreira.github.io/WE-CARE/" target="_blank" rel="noopener"
-                            class="btn btn-primary">Ver projeto</a>
+                    <div class="more-project-content">
+                        <h4 class="more-project-title">We Care Pet Clinic</h4>
+                        <p class="more-project-description">
+                            Landing page fictícia, elegante e responsiva desenvolvida para fins educacionais, simulando
+                            um site
+                            institucional de clínica veterinária com navegação clara e visual moderno.
+                        </p>
+                        <a href="https://alisson-miguelferreira.github.io/WE-CARE/" target="_blank"
+                            class="more-project-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            Ver Projeto
+                        </a>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Seção de Contato -->
-        <section id="contact">
-            <h2 class="contact-title">Conecte-se comigo</h2>
-            <a href="https://drive.google.com/file/d/1qLP3tpnCcEzbUGpynGnljjPgacdVaCdY/view?usp=sharing" target="_blank"
-                rel="noopener" class="btn btn-primary btn-cv">
-                <i class="fas fa-file-download icon-cv"></i>
-                <span class="text-cv">Baixar Currículo</span>
-            </a>
-            <div class="contact-row contact-container">
-                <a href="mailto:officealissonmiguelferreira@gmail.com" class="contact-icon gold-icon" title="E-mail">
-                    <i class="fas fa-envelope"></i>
+    <!-- Seção de Contato -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <!-- Cabeçalho da seção -->
+            <div class="section-header scroll-reveal">
+                <div class="section-badge">📞 Contato</div>
+                <h2 class="section-title">Vamos Criar Algo Incrível</h2>
+                <p class="section-description">
+                    Pronto para transformar sua próxima ideia em realidade? Entre em contato e vamos discutir seu
+                    projeto.
+                </p>
+            </div>
+
+            <!-- Grid de contatos -->
+            <div class="contact-grid">
+                <!-- Email -->
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=officealissonmiguelferreira@gmail.com&su=Contato%20via%20Portf%C3%B3lio&body=Ol%C3%A1%2C%20Alisson!%0A%0AVim%20atrav%C3%A9s%20do%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20seus%20servi%C3%A7os.%0A%0AAtenciosamente%2C"
+                    class="contact-card" target="_blank">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 class="contact-title">Email Profissional</h3>
+                    <p class="contact-text">Enviar E-mail</p>
                 </a>
-                <a href="https://www.linkedin.com/in/alisson-miguelferreira/" target="_blank"
-                    class="contact-icon gold-icon" title="LinkedIn">
-                    <i class="fab fa-linkedin"></i>
+
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/alisson-miguelferreira/" class="contact-card scroll-reveal"
+                    target="_blank">
+                    <div class="contact-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                    <h3 class="contact-title">LinkedIn</h3>
+                    <p class="contact-text">Perfil Profissional</p>
                 </a>
-                <a href="https://github.com/alisson-miguelferreira" target="_blank" class="contact-icon gold-icon"
-                    title="GitHub">
-                    <i class="fab fa-github"></i>
+
+                <!-- GitHub -->
+                <a href="https://github.com/alisson-miguelferreira" class="contact-card scroll-reveal" target="_blank">
+                    <div class="contact-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <h3 class="contact-title">GitHub</h3>
+                    <p class="contact-text">Repositórios & Código</p>
                 </a>
-                <a href="https://wa.me/5549991137577" target="_blank" class="contact-icon gold-icon" title="WhatsApp">
-                    <i class="fab fa-whatsapp"></i>
+
+                <!-- WhatsApp -->
+                <a href="https://wa.me/5549991137577?text=Ol%C3%A1%2C%20Alisson!%20Vim%20atrav%C3%A9s%20do%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20seus%20servi%C3%A7os."
+                    class="contact-card scroll-reveal" target="_blank">
+                    <div class="contact-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3 class="contact-title">WhatsApp</h3>
+                    <p class="contact-text">Chat Direto</p>
                 </a>
             </div>
-        </section>
-        <!-- Rodapé -->
-        <footer>
-            <p>&copy; 2025 Alisson Miguel Ferreira. Todos os direitos reservados.</p>
-        </footer>
+        </div>
+    </section>
 
-        <!-- Botão Voltar ao Topo -->
-        <a href="#" id="back-to-top" title="Voltar ao topo">
-            <svg width="38" height="38" viewBox="0 0 38 38" fill="none">
-                <circle cx="19" cy="19" r="19" fill="#101010" fill-opacity="0.7" />
-                <path d="M19 26V12M19 12L13 18M19 12L25 18" stroke="#d4af37" stroke-width="2.5" stroke-linecap="round"
-                    stroke-linejoin="round" />
-            </svg>
-        </a>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-text">
+                <p>&copy; 2025 Alisson Miguel Ferreira. Todos os direitos reservados.</p>
+                <p>Desenvolvido com dedicação e paixão por tecnologia</p>
+            </div>
+        </div>
+    </footer>
 
-        <script src="js/stars-bg.js"></script>
-        <script src="js/back-to-top.js"></script>
-    </main>
+    <!-- Botão Voltar ao Topo -->
+    <button class="back-to-top" id="backToTop" title="Voltar ao topo">
+        <i class="fas fa-arrow-up"></i>
+        <span>Topo</span>
+    </button>
+
+    <!-- Arquivo JavaScript principal -->
+    <script src="js/script.js"></script>
 </body>
 
 </html>
