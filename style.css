@@ -895,6 +895,13 @@ body {
     font-weight: 500;
     color: var(--neon-pink);
     border: 1px solid rgba(255, 64, 129, 0.2);
+    transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+    background: rgba(255, 64, 129, 0.1);
+    border-color: var(--neon-pink);
+    transform: translateY(-1px);
 }
 
 /* Container das tecnologias dos demais projetos */
@@ -908,12 +915,20 @@ body {
 /* Tags de tecnologia menores para demais projetos */
 .more-tech-tag {
     padding: 0.25rem 0.6rem;
-    background: var(--dark-elevated);
+    background: rgba(30, 30, 30, 0.9);
     border-radius: 12px;
     font-size: 0.7rem;
     font-weight: 500;
     color: var(--neon-pink);
-    border: 1px solid rgba(255, 64, 129, 0.2);
+    border: 1px solid rgba(255, 64, 129, 0.3);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.more-tech-tag:hover {
+    background: rgba(255, 64, 129, 0.1);
+    border-color: var(--neon-pink);
+    transform: translateY(-1px);
 }
 
 /* Links do projeto */
